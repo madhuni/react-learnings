@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Redux Basics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://unpkg.com/redux@latest/dist/redux.js"></script>
+</head>
+<body>
+  <script>
+    function addColor (value) {
+      return {
+        type: 'ADD', // it is the signal what we are intend to do
+        color: value
+      }
+    }
+
+    function removeColor (value) {
+      return {
+        type: 'REMOVE',
+        color: value
+      }
+    }
+
+    /* Defining the reducer */
+    function favtColors (state, action) {
+      if (state === undefined) {
+        state = [];
+      }
+
+      if (action.type === 'ADD') {
+        return state.concat(action.color);
+      } else if (action.type === 'REMOVE') {
+        return state.filter((item) => {
+          return item !== action.color;
+        });
+      } else {
+        return state;
+      }
+    }
+
+    /* Making the store here */
+    var store = Redux.createStore(favtColors);
+    
+  </script>
+</body>
+</html>

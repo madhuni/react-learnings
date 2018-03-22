@@ -1,0 +1,39 @@
+.Posts {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+a,
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover,
+a:active {
+    color: orange;
+    text-decoration: underline;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-list li {
+    display: inline;
+}
+
+.nav-list li:not(:last-child) {
+    margin-right: 20px;
+}
+
+.active {
+    color: orange;
+    text-decoration: underline;
+}

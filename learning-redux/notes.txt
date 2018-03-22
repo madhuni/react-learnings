@@ -1,0 +1,14 @@
+Redux Basics:
+
+1) All our app's State use to be centerlize in one single location called 'Store'.
+2) An 'Action' is the only mechanism we have, to communicate with the store. Action defines what we would like to do with State.
+3) 'Reducers' define what is going to be our final state. The exact
+specifics of what happens and how our new state is defined is
+handled by our 'Reducers'.
+  |- Provides access to our store's original State.
+  |- Allows us to inspect the Action that was currently fired.
+  |- Allow us to set our store's new state.
+  |-----What we should not do -----
+  |- Mutate the arguments
+  |- Perform side effects like API calls and routing transitions
+  |- Call non pure function e.g. Date.now()
